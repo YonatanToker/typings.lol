@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toker's Typing</title>
+</head>
+<body>
+    <header>
+        <ul class="nav-bar">
+            <li class="nav-bar__item current-page hover-scale">Regular Tests</li>
+            <li class="nav-bar__item hover-scale">Customized Tests</li>
+        </ul>
+        <img class="icon-img hover-scale" src="" alt="keyboard icon">
+    </header>
+    <div class="second-header-container">
+        <img title="light theme" src="" alt="" class="light-theme-icon hover-scale theme-icons">
+        <img title="dark theme" class="dark-theme-icon hover-scale theme-icons" src="" alt="">
+    </div>
+    <main>
+        <img class="below-header-icon" src="" alt="keyboard picture">
+        <h1 style="text-decoration:underline" class="hover-scale">Toker's Typing Website</h1>
+        <div class="command-container">
+            <div class="command-container__top">
+                <div class="word-count">
+                    <span class="test-25 hover-scale current-test">25</span> /
+                    <span class="test-35 hover-scale">35</span> /
+                    <span class="test-50 hover-scale">50</span> /
+                    <span class="test-100 hover-scale">100</span>
+                </div>
+                <div class="difficulty-container">
+                    <span class="easy current-difficulty hover-scale">easy</span> / 
+                    <span class="hard hover-scale">hard</span>
+                </div>
+            </div>
+            <hr class="hr1">
+            <div class="command-container__typing-area">
+                <div class="text-display">
+                </div>
+                <div class="bar">
+                    <input type="text" id="input-field" spellcheck="false" autocomplete="off" autocapitalize="off" autocorrect="off">
+                    <button class="reset-button hover-scale" title="or press esc"><img class="reset-img" src="" alt="circular arrows"></button>
+                </div>
+            </div>
+        </div>
+        <div class="results-save-container">
+            <div class="current-stats">
+                <span class="wpm">wpm: </span>
+                <span class="accuracy">accuracy: </span>
+                <span class="correct-words">correct words: </span>
+                <span class="wrong-words">wrong words: </span>
+            </div>
+            <button class="save-button hover-scale" title="or press enter">save</button>
+            <button id="savedButton" disabled>Saved</button>
+        </div>
+        <div class="stats-cards-container">
+            <div class="easy-stats-container card">
+                <div class="easy-stats-container__top card__top">
+                    <h1>Easy Stats</h1>
+                </div>
+                <div class="easy-stats-container__stats-area card__main">
+                    <span class="easy-stats-container__wpm">Avg WPM:</span>
+                    <span class="easy-stats-container__accuracy">Avg Accuracy:</span>
+                    <span class="easy-stats-container__recent-tests-title">Recent Tests Stats:</span>
+                    <span class="easy-stats-container__recent-tests-display"></span>
+                    <button class="easy-stats-container__clear clear-button hover-scale">clear</button>
+                </div>
+            </div>
+            <div class="hard-stats-container card">
+                <div class="hard-stats-container card__top">
+                    <h1>Hard Stats</h1>
+                </div>
+                <div class="hard-stats-container card__main">
+                    <span class="hard-stats-container__wpm">Avg WPM:</span>
+                    <span class="hard-stats-container__accuracy">Avg Accuracy:</span>
+                    <span class="hard-stats-container__recent-tests-title">Recent Tests Stats:</span>
+                    <span class="hard-stats-container__recent-tests-display"></span>
+                    <button class="hard-stats-container__clear clear-button hover-scale">clear</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

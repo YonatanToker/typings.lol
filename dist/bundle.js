@@ -1,0 +1,308 @@
+/*
+ * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./functionality/index.js":
+/*!********************************!*\
+  !*** ./functionality/index.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/index.css */ \"./styles/index.css\");\n/* harmony import */ var _keyboard_icon_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../keyboard.icon.png */ \"./keyboard.icon.png\");\n/* harmony import */ var _arrows_small_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../arrows-small.svg */ \"./arrows-small.svg\");\n/* harmony import */ var _light_theme_icon2_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../light-theme-icon2.png */ \"./light-theme-icon2.png\");\n/* harmony import */ var _dark_theme_icon2_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../dark-theme-icon2.png */ \"./dark-theme-icon2.png\");\n/* harmony import */ var _light_theme_icon_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../light-theme-icon.png */ \"./light-theme-icon.png\");\n/* harmony import */ var _dark_theme_icon_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../dark-theme-icon.png */ \"./dark-theme-icon.png\");\nfunction _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }\nfunction _nonIterableSpread() { throw new TypeError(\"Invalid attempt to spread non-iterable instance.\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.\"); }\nfunction _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === \"string\") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === \"Object\" && o.constructor) n = o.constructor.name; if (n === \"Map\" || n === \"Set\") return Array.from(o); if (n === \"Arguments\" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }\nfunction _iterableToArray(iter) { if (typeof Symbol !== \"undefined\" && iter[Symbol.iterator] != null || iter[\"@@iterator\"] != null) return Array.from(iter); }\nfunction _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }\nfunction _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }\n\n\n\n //for dark, these are white icons\n\n //for light, these are black icons\n\n//Yonatan Toker's Project\nvar link = document.querySelector(\"link[rel*='icon']\");\nif (!link) {\n  link = document.createElement('link');\n  link.type = 'image/x-icon';\n  link.rel = 'shortcut icon';\n  document.getElementsByTagName('head')[0].appendChild(link);\n}\nlink.href = _keyboard_icon_png__WEBPACK_IMPORTED_MODULE_1__[\"default\"];\nlink.rel = 'icon shortcut';\nvar barEl = document.querySelector(\".bar\");\nvar topContainer = document.querySelector(\".command-container__top\");\nvar typingArea = document.querySelector(\".command-container__typing-area\");\nvar lightThemeIconEl = document.querySelector(\".light-theme-icon\");\nvar darkThemeIconEl = document.querySelector(\".dark-theme-icon\");\nbarEl.querySelector('.reset-img').src = _arrows_small_svg__WEBPACK_IMPORTED_MODULE_2__[\"default\"];\ndocument.querySelector('.icon-img').src = _keyboard_icon_png__WEBPACK_IMPORTED_MODULE_1__[\"default\"];\ndocument.querySelector(\".below-header-icon\").src = _keyboard_icon_png__WEBPACK_IMPORTED_MODULE_1__[\"default\"];\ndocument.addEventListener(\"DOMContentLoaded\", function () {\n  document.getElementById(\"input-field\").focus();\n  var savedTheme = localStorage.getItem('theme');\n  if (savedTheme === 'light') {\n    document.body.classList.add('light-theme');\n    lightThemeIconEl.src = _light_theme_icon_png__WEBPACK_IMPORTED_MODULE_5__[\"default\"];\n    darkThemeIconEl.src = _dark_theme_icon_png__WEBPACK_IMPORTED_MODULE_6__[\"default\"];\n  } else {\n    document.body.classList.remove('light-theme');\n    lightThemeIconEl.src = _light_theme_icon2_png__WEBPACK_IMPORTED_MODULE_3__[\"default\"];\n    darkThemeIconEl.src = _dark_theme_icon2_png__WEBPACK_IMPORTED_MODULE_4__[\"default\"];\n  }\n});\nlightThemeIconEl.addEventListener('click', function () {\n  document.body.classList.add('light-theme');\n  localStorage.setItem('theme', 'light');\n\n  // Update the icons' src attributes\n  lightThemeIconEl.src = _light_theme_icon_png__WEBPACK_IMPORTED_MODULE_5__[\"default\"];\n  darkThemeIconEl.src = _dark_theme_icon_png__WEBPACK_IMPORTED_MODULE_6__[\"default\"];\n});\n\n// Event listener for the dark theme icon\ndarkThemeIconEl.addEventListener('click', function () {\n  document.body.classList.remove('light-theme');\n  localStorage.setItem('theme', 'dark');\n\n  // Update the icons' src attributes\n  lightThemeIconEl.src = _light_theme_icon2_png__WEBPACK_IMPORTED_MODULE_3__[\"default\"];\n  darkThemeIconEl.src = _dark_theme_icon2_png__WEBPACK_IMPORTED_MODULE_4__[\"default\"];\n});\n//inputField & typingText\nvar typingText = typingArea.querySelector(\".text-display\");\nvar inputFieldEl = barEl.querySelector(\"#input-field\");\nvar difficultyContainerEl = topContainer.querySelector(\".difficulty-container\");\nvar wordsCountEl = topContainer.querySelector(\".word-count\");\nvar focusOnInputField = function focusOnInputField() {\n  inputFieldEl.focus();\n};\n//A function which will return me an array of random words, with the amount of words being passed as an argument\nvar wordList = __webpack_require__(/*! ./data.json */ \"./functionality/data.json\");\nvar wordsArray = [];\nvar getRandomWordsArrayFromJSON = function getRandomWordsArrayFromJSON(nameOfArrayInJSON, wordCount) {\n  var words = wordList[nameOfArrayInJSON];\n  if (!words || wordCount === 0) {\n    return [];\n  }\n  var wordsCopy = _toConsumableArray(words); //so it won't be with passing by reference and mutate the array\n  var finalArr = [];\n  for (var i = 0; i < wordCount; i++) {\n    var randomIndex = Math.floor(Math.random() * wordsCopy.length);\n    finalArr.push(wordsCopy[randomIndex]);\n    wordsCopy.splice(randomIndex, 1); //preventing duplicates\n    if (wordsCopy.length === 0) {\n      break; //making sure the code won't break\n    }\n  }\n\n  wordsArray = finalArr;\n  console.log(wordsArray);\n  return finalArr;\n};\nvar currentDifficulty;\nvar displayingRandomWordsInTypingText = function displayingRandomWordsInTypingText() {\n  currentDifficulty = difficultyContainerEl.querySelector(\".current-difficulty\").textContent;\n  var currentWordsCount = wordsCountEl.querySelector(\".current-test\").textContent;\n  if (!currentDifficulty || !currentWordsCount) {\n    return; //in case there is no value in difficulty or wordsCount or wordsCnt is 0\n  }\n\n  typingText.innerHTML = '';\n  var arr = getRandomWordsArrayFromJSON(currentDifficulty, parseInt(currentWordsCount));\n  for (var i = 0; i < arr.length; i++) {\n    var span = document.createElement(\"span\");\n    span.textContent = arr[i];\n    typingText.appendChild(span);\n  }\n  typingText.firstElementChild.classList.add('highlight');\n  currentWordEl = typingText.firstElementChild;\n  startTime = null;\n  wordsTypedSoFar = 0;\n  correctWordsCount = 0;\n  wrongWordsCount = 0;\n  inputFieldEl.value = \"\";\n  focusOnInputField();\n};\ndisplayingRandomWordsInTypingText();\n\n//event listeners to all of the word counts spans 25 / 35 / 50 / 100:\nwordsCountEl.addEventListener(\"click\", function (e) {\n  var targetSpan = e.target.closest(\"span\"); // return me the clicked span\n  if (targetSpan && targetSpan.classList.contains('current-test') || targetSpan === null) {\n    return;\n  }\n  //if we are here the element we clicked is not current-test\n  var currentTestElement = wordsCountEl.querySelector('.current-test');\n  if (currentTestElement) {\n    currentTestElement.classList.remove('current-test');\n  }\n  if (targetSpan) {\n    targetSpan.classList.add(\"current-test\");\n  }\n  displayingRandomWordsInTypingText();\n});\ndifficultyContainerEl.addEventListener(\"click\", function (e) {\n  var targetDifficulty = e.target.closest(\"span\");\n  if (targetDifficulty && targetDifficulty.classList.contains(\"current-difficulty\") || targetDifficulty === null) {\n    return;\n  }\n  //if we are here the element we clicked is not current-difficulty\n  var currentDifficultyEl = difficultyContainerEl.querySelector(\".current-difficulty\");\n  if (currentDifficultyEl) {\n    currentDifficultyEl.classList.remove(\"current-difficulty\");\n  }\n  if (targetDifficulty) {\n    targetDifficulty.classList.add(\"current-difficulty\");\n  }\n  displayingRandomWordsInTypingText();\n});\nvar resetButton = barEl.querySelector(\".reset-button\");\nresetButton.addEventListener(\"click\", function () {\n  displayingRandomWordsInTypingText();\n});\n\n//query selectors for the current stats and save button:\nvar resultsSaveContainer = document.querySelector(\".results-save-container\");\nvar wpmSpan = resultsSaveContainer.querySelector(\".wpm\");\nvar accuracySpan = resultsSaveContainer.querySelector(\".accuracy\");\nvar correctWordsSpan = resultsSaveContainer.querySelector(\".correct-words\");\nvar wrongsWordsSpan = resultsSaveContainer.querySelector(\".wrong-words\");\nvar saveButton = resultsSaveContainer.querySelector(\".save-button\");\nvar savedDisableBtn = resultsSaveContainer.querySelector(\"#savedButton\");\n//taking care of timer, saving wpm and accuracy, correct and wrong words amount\n// remember about wordsArray\nvar currentWordEl;\nvar allStatsOfEasyTests = JSON.parse(localStorage.getItem('easyTestsStats') || '[]');\nvar allStatsOfHardTests = JSON.parse(localStorage.getItem('hardTestsStats') || '[]');\nvar wordsTypedSoFar = 0;\nvar correctWordsCount = 0;\nvar wrongWordsCount = 0;\nvar startTime = null;\nvar accuracy;\nvar wpm;\nvar currCorrectWordsCount;\nvar currWrongWordsCount;\ninputFieldEl.addEventListener('input', function (e) {\n  if (!startTime) {\n    startTime = Date.now();\n  }\n\n  // Trim the space or newline character from the end for comparison\n  var typedWord = e.target.value.trim();\n  if (e.target.value.endsWith(' ') || e.target.value.endsWith('\\n')) {\n    if (!currentWordEl) {\n      return; // Return early if there's no current word element\n    }\n    // Check if the word is correct\n    var correctWord = wordsArray[wordsTypedSoFar];\n    if (typedWord === correctWord) {\n      // Word is correct\n      correctWordsCount++;\n      // Remove highlight class and mark word as correct\n      currentWordEl.classList.remove('highlight');\n      currentWordEl.classList.add(\"correct\");\n    } else {\n      // Word is incorrect\n      wrongWordsCount++;\n      // Remove highlight class and mark word as incorrect\n      currentWordEl.classList.remove('highlight');\n      currentWordEl.classList.add(\"wrong\");\n    }\n    currentWordEl = currentWordEl.nextElementSibling;\n    if (currentWordEl) {\n      currentWordEl.classList.add('highlight');\n    }\n    wordsTypedSoFar++;\n    e.target.value = ''; // Clear the input for the next word\n    // Check if the test is over\n    var totalWordsToType = parseInt(wordsCountEl.querySelector(\".current-test\").textContent);\n    if (wordsTypedSoFar === totalWordsToType) {\n      var endTime = Date.now();\n      var scopedWPM = calculateWPM(endTime, startTime);\n      // Calculate accuracy\n      var scopedAccuracy = Math.round(correctWordsCount / totalWordsToType * 100); // in percentage\n      // You can also show results to the user using the variables: wpm, accuracy, correctWordsCount, wrongWordsCount, etc.\n      saveButton.style.display = \"block\";\n      savedDisableBtn.style.display = \"none\";\n      wpm = scopedWPM;\n      accuracy = scopedAccuracy;\n      wpmSpan.textContent = \"wpm: \" + scopedWPM;\n      accuracySpan.textContent = \"accuracy: \" + scopedAccuracy + \"%\";\n      correctWordsSpan.textContent = \"correct words: \" + correctWordsCount;\n      wrongsWordsSpan.textContent = \"wrong words: \" + wrongWordsCount;\n      //you can apend them to an array, then reassining the value of the array at localStorage\n      currCorrectWordsCount = correctWordsCount;\n      currWrongWordsCount = wrongWordsCount;\n\n      // Reset for next test\n      startTime = null;\n      wordsTypedSoFar = 0;\n      correctWordsCount = 0;\n      wrongWordsCount = 0;\n    }\n  }\n});\nvar calculateWPM = function calculateWPM(endTime, startTime) {\n  //need to endTime after the last word\n  var timeDifference = endTime - startTime;\n  var minutes = timeDifference / 60000;\n  var wpm = Math.round(correctWordsCount / minutes);\n  return wpm;\n};\nvar allStatsContainerEl = document.querySelector(\".stats-cards-container\");\n//easy\nvar easyWPMEl = allStatsContainerEl.querySelector(\".easy-stats-container__wpm\");\nvar easyAccuracyEl = allStatsContainerEl.querySelector(\".easy-stats-container__accuracy\");\nvar recentEasyTestsEl = allStatsContainerEl.querySelector(\".easy-stats-container__recent-tests-display\");\n//hard\nvar hardWPMEl = allStatsContainerEl.querySelector(\".hard-stats-container__wpm\");\nvar hardAccuracyEl = allStatsContainerEl.querySelector(\".hard-stats-container__accuracy\");\nvar recentHardTestsEl = allStatsContainerEl.querySelector(\".hard-stats-container__recent-tests-display\");\nvar easyWPMAverage;\nvar hardWPMAverage;\nvar easyAccAverage;\nvar hardAccAverage;\nsaveButton.addEventListener(\"click\", function () {\n  if (currentDifficulty === 'easy') {\n    allStatsOfEasyTests = JSON.parse(localStorage.getItem('easyTestsStats') || '[]');\n    allStatsOfEasyTests.push([wpm, accuracy, currCorrectWordsCount, currWrongWordsCount]);\n    localStorage.setItem('easyTestsStats', JSON.stringify(allStatsOfEasyTests));\n    easyWPMAverage = getAverageWPMFromStats('easyTestsStats');\n    easyAccAverage = getAverageAccuracyFromStats('easyTestsStats');\n    displayEasyAvgWPM(easyWPMAverage);\n    displayEasyAccuracy(easyAccAverage);\n    displayArrayOfEasyWPM();\n  } else if (currentDifficulty === \"hard\") {\n    allStatsOfHardTests = JSON.parse(localStorage.getItem('hardTestsStats') || '[]');\n    allStatsOfHardTests.push([wpm, accuracy, currCorrectWordsCount, currWrongWordsCount]);\n    localStorage.setItem('hardTestsStats', JSON.stringify(allStatsOfHardTests));\n    hardWPMAverage = getAverageWPMFromStats('hardTestsStats');\n    hardAccAverage = getAverageAccuracyFromStats('hardTestsStats');\n    displayHardAvgWPM(hardWPMAverage);\n    displayHardAccuracy(hardAccAverage);\n    displayArrayOfHardWPM();\n  } else {\n    return;\n  }\n  saveButton.style.display = 'none';\n  savedDisableBtn.style.display = 'block';\n  //reset results\n\n  //at the end cause it to be hidden (turn into saved) - change in the input event listener that it will be visible\n});\n\nvar displayEasyAccuracy = function displayEasyAccuracy(easyAccuracyAvg) {\n  if (!easyAccuracyAvg) {\n    return;\n  }\n  var avgAccSpan = \"Avg Accuracy: \".concat(easyAccuracyAvg, \"%\");\n  easyAccuracyEl.textContent = avgAccSpan;\n};\nvar displayHardAccuracy = function displayHardAccuracy(hardAccuracyAvg) {\n  if (!hardAccuracyAvg) {\n    return;\n  }\n  var avgAccSpan = \"Avg Accuracy: \".concat(hardAccuracyAvg, \"%\");\n  hardAccuracyEl.textContent = avgAccSpan;\n};\nvar displayEasyAvgWPM = function displayEasyAvgWPM(avgWPM) {\n  if (!avgWPM) {\n    return;\n  }\n  var avgWPMStr = \"Avg WPM: \" + avgWPM;\n  easyWPMEl.textContent = avgWPMStr;\n};\nvar displayHardAvgWPM = function displayHardAvgWPM(avgWPM) {\n  if (!avgWPM) {\n    return;\n  }\n  var avgWPMStr = \"Avg WPM: \" + avgWPM;\n  hardWPMEl.textContent = avgWPMStr;\n};\nvar getAverageWPMFromStats = function getAverageWPMFromStats(itemName) {\n  var jsonString = localStorage.getItem(itemName);\n  if (!jsonString) {\n    return null; // No data found in localStorage for this item\n  }\n\n  var arr = JSON.parse(jsonString); // Parse the JSON string to get the array\n  if (arr.length === 0) {\n    return null; // The array is empty\n  }\n\n  var i = 0;\n  var sum = 0;\n  for (i = 0; i < arr.length; i++) {\n    sum += arr[i][0];\n  }\n  var avg = Math.round(sum / i);\n  return avg;\n};\nvar getAverageAccuracyFromStats = function getAverageAccuracyFromStats(itemName) {\n  var jsonString = localStorage.getItem(itemName);\n  if (!jsonString) {\n    return null; // No data found in localStorage for this item\n  }\n\n  var arr = JSON.parse(jsonString);\n  if (arr.length === 0) {\n    return null;\n  }\n  var i = 0;\n  var sum = 0;\n  for (i = 0; i < arr.length; i++) {\n    sum += arr[i][1];\n  }\n  var avgAccuracy = Math.round(sum / i);\n  return avgAccuracy;\n};\n// const getArrayOfWPM = (itemName) => {\n//     const jsonString = localStorage.getItem(itemName);\n//     if (!jsonString) {\n//         return null;  // No data found in localStorage for this item\n//     }\n//     const arr = JSON.parse(jsonString);\n//     if (arr.length === 0) {\n//         return null;\n//     }\n//     let wpmArr = [];\n//     for (let i=0; i < arr.length; i++) {\n//         wpmArr.push(arr[i][0]);\n//     }\n//     return wpmArr;\n// };\nvar displayArrayOfEasyWPM = function displayArrayOfEasyWPM() {\n  recentEasyTestsEl.innerHTML = '';\n  var jsonString = localStorage.getItem('easyTestsStats');\n  if (!jsonString) {\n    return; // No data found in localStorage for this item\n  }\n\n  var arr = JSON.parse(jsonString);\n  if (arr.length === 0) {\n    return;\n  }\n  for (var i = 0; i < arr.length; i++) {\n    var _wpmSpan = document.createElement(\"span\");\n    _wpmSpan.textContent = arr[i][0] + \", \"; // WPM value\n    _wpmSpan.title = \"WPM: \".concat(arr[i][0], \" Accuracy: \").concat(arr[i][1], \"%, Correct Words: \").concat(arr[i][2], \", Wrong Words: \").concat(arr[i][3]);\n    _wpmSpan.style.cursor = \"pointer\";\n    recentEasyTestsEl.appendChild(_wpmSpan);\n  }\n};\nvar displayArrayOfHardWPM = function displayArrayOfHardWPM() {\n  recentHardTestsEl.innerHTML = '';\n  var jsonString = localStorage.getItem('hardTestsStats');\n  if (!jsonString) {\n    return; // No data found in localStorage for this item\n  }\n\n  var arr = JSON.parse(jsonString);\n  if (arr.length === 0) {\n    return;\n  }\n  for (var i = 0; i < arr.length; i++) {\n    var _wpmSpan2 = document.createElement(\"span\");\n    _wpmSpan2.textContent = arr[i][0] + \", \"; // WPM value\n    _wpmSpan2.title = \"WPM: \".concat(arr[i][0], \" Accuracy: \").concat(arr[i][1], \"%, Correct Words: \").concat(arr[i][2], \", Wrong Words: \").concat(arr[i][3]);\n    _wpmSpan2.style.cursor = \"pointer\";\n    recentHardTestsEl.appendChild(_wpmSpan2);\n  }\n};\nfunction displayEasyStatsOnLoad() {\n  var avgWPM = getAverageWPMFromStats('easyTestsStats');\n  displayEasyAvgWPM(avgWPM);\n  var avgAccuracy = getAverageAccuracyFromStats('easyTestsStats');\n  displayEasyAccuracy(avgAccuracy);\n  displayArrayOfEasyWPM();\n}\nfunction displayHardStatsOnLoad() {\n  var avgWPM = getAverageWPMFromStats('hardTestsStats');\n  displayHardAvgWPM(avgWPM);\n  var avgAccuracy = getAverageAccuracyFromStats('hardTestsStats');\n  displayHardAccuracy(avgAccuracy);\n  displayArrayOfHardWPM();\n}\n\n// Call the above functions to load data immediately when the script runs:\ndisplayEasyStatsOnLoad();\ndisplayHardStatsOnLoad();\n\n//clearing the data from localStorage and changing display to nothing\nvar clearEasyStatsEl = allStatsContainerEl.querySelector(\".easy-stats-container__clear\");\nvar clearHardStatsEl = allStatsContainerEl.querySelector(\".hard-stats-container__clear\");\nclearEasyStatsEl.title = \"Click twice to clear\";\nclearHardStatsEl.title = \"Click twice to clear\";\nfunction clearEasyStatsFunc() {\n  localStorage.removeItem('easyTestsStats');\n  easyWPMEl.textContent = \"Avg WPM:\";\n  easyAccuracyEl.textContent = \"Avg Accuracy:\";\n  recentEasyTestsEl.textContent = \"\";\n}\nfunction clearHardStatsFunc() {\n  localStorage.removeItem('hardTestsStats');\n  hardWPMEl.textContent = \"Avg WPM:\";\n  hardAccuracyEl.textContent = \"Avg Accuracy:\";\n  recentHardTestsEl.textContent = \"\";\n}\nclearEasyStatsEl.addEventListener(\"dblclick\", function () {\n  clearEasyStatsFunc();\n});\nclearHardStatsEl.addEventListener(\"dblclick\", function () {\n  clearHardStatsFunc();\n});\n// create a clearStatsForEasyTests function and clearStatsForHardTests\ndocument.addEventListener('keydown', function (event) {\n  if (event.key === 'Escape') {\n    displayingRandomWordsInTypingText();\n  }\n  if (event.key === \"Enter\") {\n    if (window.getComputedStyle(saveButton).display !== \"none\") {\n      saveButton.click();\n    }\n  }\n});\n\n//# sourceURL=webpack://first-typing-website/./functionality/index.js?");
+
+/***/ }),
+
+/***/ "../node_modules/css-loader/dist/cjs.js!./styles/index.css":
+/*!*****************************************************************!*\
+  !*** ../node_modules/css-loader/dist/cjs.js!./styles/index.css ***!
+  \*****************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"../node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"../node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n// Imports\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, `:root {\r\n    --background-color: #131313;\r\n    --secondary-background-color: #313131;\r\n    --text-color: rgb(231, 231, 231);\r\n    --highlight-color: white;\r\n}\r\n.light-theme {\r\n    --background-color: rgb(231, 231, 231);\r\n    --secondary-background-color: white;\r\n    --text-color: #313131;\r\n    --highlight-color: #131313;\r\n}\r\nhtml, body {\r\n    margin: 0;\r\n    padding: 0;\r\n    box-sizing: border-box;\r\n    font-family: monospace, sans-serif;\r\n    user-select: none;\r\n    overflow-x: hidden;\r\n}\r\nbody {\r\n    background-color: var(--background-color);\r\n    color: var(--text-color);\r\n    min-height: 100vh;\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n.hover-scale:hover {\r\n    cursor: pointer;\r\n    transform:scale(1.05);\r\n}\r\nheader {\r\n    height: 80px;\r\n    background-color: var(--secondary-background-color);\r\n    width: 100%;\r\n    display: flex;\r\n    justify-content: space-between;\r\n}\r\n.nav-bar {\r\n    flex: 1;\r\n    display: flex;\r\n    height: 100%;\r\n    flex-direction: row;\r\n    list-style: none;\r\n    color: var(--text-color);\r\n    font-family: monospace, sans-serif;\r\n    column-gap: 30px;\r\n    align-items: center;\r\n    box-sizing: border-box;\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n.current-page {\r\n    text-decoration: underline;\r\n}\r\n.nav-bar__item {\r\n    box-sizing: border-box;\r\n    font-weight: bold;\r\n    font-size: 2em;\r\n}\r\n.nav-bar__item:first-of-type {\r\n    margin-left: 20px;\r\n}\r\n.icon-img {\r\n    height: 100%;\r\n    cursor: pointer;\r\n    margin-right: 10px;\r\n}\r\n.nav-bar .icon-item {\r\n    position: absolute;\r\n    right: 0;\r\n    margin-right: 20px;\r\n    height: 100%;\r\n}\r\n.second-header-container {\r\n    width: 100%;\r\n    height: 40px;\r\n    display: flex;\r\n    flex-direction: row-reverse;\r\n}\r\n.theme-icons {\r\n    height: 100%;\r\n    margin: 0 10px 0 0;\r\n}\r\nmain {\r\n    width: 100%;\r\n    height: calc(100vh - 80px);\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    box-sizing: border-box;\r\n}\r\n.below-header-icon {\r\n    display: none;\r\n}\r\n.command-container {\r\n    width: 95%;\r\n    max-width: 1000px;\r\n    background-color: var(--secondary-background-color);\r\n    display: flex;\r\n    flex-direction: column;\r\n    /*Just For the sake of editing*/\r\n    position: relative;\r\n    margin: 0 auto;\r\n    font-size: 2em;\r\n    border-radius: 10px;\r\n    padding: 0.2em 0.5em;\r\n    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;\r\n}\r\n.command-container__top {\r\n    width: 100%;\r\n    display: flex;\r\n    justify-content: space-between;\r\n}\r\nspan {\r\n    display: inline-block;\r\n}\r\n.current-test {\r\n    color: var(--highlight-color);\r\n    text-decoration: underline;\r\n    transform: scale(1.1);\r\n}\r\n.current-difficulty {\r\n    color: var(--highlight-color);\r\n    text-decoration: underline;\r\n    transform: scale(1.1);\r\n}\r\n.text-display {\r\n    color: var(--text-color);\r\n}\r\n.highlight {\r\n    color: rgba(116, 0, 127, 0.988);\r\n}\r\n.wrong {\r\n    color: rgba(243, 72, 72, 0.835);\r\n}\r\n.correct {\r\n    color: rgba(37, 98, 37, 0.901);\r\n}\r\n.hr1 {\r\n    width: 100%;\r\n    height: 2px;\r\n    background-color: var(--text-color);\r\n    border-radius: 10px;\r\n    margin-bottom: 1.5em;\r\n}\r\n.text-display span {\r\n    margin-right: 15px;\r\n}\r\n.bar {\r\n    width: 100%;\r\n    box-sizing: border-box;\r\n    margin: 1.2em 0 0.2em 0;\r\n    height: 2em;\r\n    display: flex;\r\n    justify-content: space-between;\r\n}\r\n#input-field {\r\n    flex: 1;\r\n    background-color: var(--background-color);\r\n    width: calc(100% - 120px);\r\n    font:inherit;\r\n    color: var(--text-color);\r\n    border: none;\r\n    border-radius: 8px;\r\n    height: 100%;\r\n    box-sizing: border-box;\r\n    padding: 0 12px;\r\n    outline: none;\r\n}\r\n#input-field:focus {\r\n    border: var(--text-color) solid 2px;\r\n}\r\n.reset-button {\r\n    width: 110px;\r\n    height: 100%;\r\n    border: none;\r\n    outline: none;\r\n    border-radius: 8px;\r\n    background-color: var(--background-color);\r\n    margin-left: 10px;\r\n}\r\n.results-save-container {\r\n    display: flex;\r\n    justify-content: center;\r\n    flex-direction: column;\r\n    background-color: var(--secondary-background-color);\r\n    margin-top: 20px;\r\n    border-radius: 10px;\r\n    border: none;\r\n    padding: 15px;\r\n    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;\r\n}\r\n.current-stats {\r\n    width: 100%;\r\n}\r\n.current-stats span {\r\n    font-family: monospace, sans-serif;\r\n    font-size: 2em;\r\n    margin: 0 20px;\r\n}\r\n.save-button {\r\n    display: none;\r\n    width: 80px;\r\n    border: solid var(--text-color) 2px;\r\n    outline: none;\r\n    border-radius: 8px;\r\n    background-color: var(--background-color);\r\n    color: var(--text-color);\r\n    font-family: monospace, sans-serif;\r\n    margin: 10px auto 0 auto;\r\n    font-size: 2em;\r\n    padding: 5px 20px;\r\n    box-sizing:content-box;\r\n    \r\n}\r\n#savedButton {\r\n    display: none;\r\n    background-color: var(--background-color);  \r\n    color: var(--text-color);  \r\n    cursor: not-allowed; \r\n    width: 90px;\r\n    font-size: 2em;\r\n    padding: 5px 20px;\r\n    box-sizing: content-box;\r\n    margin: 10px auto 0 auto;\r\n    outline: none;\r\n    font-family: monospace, sans-serif;\r\n    border-radius: 8px;\r\n}\r\n.stats-cards-container {\r\n    display: flex;\r\n    flex-direction: row;\r\n    flex-wrap: wrap;\r\n    max-width: 1000px;\r\n    width: 100%;\r\n    justify-content:space-around;\r\n    margin-top: 20px;\r\n}\r\n.card {\r\n    width: 350px;\r\n    border: 2px solid var(--text-color);\r\n    background-color: var(--secondary-background-color);\r\n    border-radius: 10px;\r\n    padding: 0;\r\n    box-sizing: content-box;\r\n    margin-bottom: 20px;\r\n    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;\r\n}\r\n.card__top {\r\n    border-bottom: 2px solid var(--text-color);\r\n    width: 100%;\r\n    height: 50px;\r\n    box-sizing: border-box;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n.card__main {\r\n    width: 100%;\r\n    padding: 10px;\r\n    display: flex;\r\n    justify-content: flex-start;\r\n    font-size: 2em;\r\n    flex-direction: column;\r\n}\r\n.clear-button {\r\n    width: 120px;\r\n    border: none;\r\n    border-radius: 10px;\r\n    font-size: 1.2em;\r\n    margin: 10px auto 0 auto;\r\n    box-sizing: content-box;\r\n    padding: 5px 10px;\r\n    background-color: var(--background-color);\r\n    color: var(--text-color);\r\n}\r\n@media screen and (max-width: 460px) {\r\n    .icon-img {\r\n        display: none;\r\n    }\r\n    .below-header-icon {\r\n        display: block;\r\n        height: 100px;\r\n    }\r\n}`, \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://first-typing-website/./styles/index.css?../node_modules/css-loader/dist/cjs.js");
+
+/***/ }),
+
+/***/ "../node_modules/css-loader/dist/runtime/api.js":
+/*!******************************************************!*\
+  !*** ../node_modules/css-loader/dist/runtime/api.js ***!
+  \******************************************************/
+/***/ ((module) => {
+
+eval("\n\n/*\n  MIT License http://www.opensource.org/licenses/mit-license.php\n  Author Tobias Koppers @sokra\n*/\nmodule.exports = function (cssWithMappingToString) {\n  var list = [];\n\n  // return the list of modules as css string\n  list.toString = function toString() {\n    return this.map(function (item) {\n      var content = \"\";\n      var needLayer = typeof item[5] !== \"undefined\";\n      if (item[4]) {\n        content += \"@supports (\".concat(item[4], \") {\");\n      }\n      if (item[2]) {\n        content += \"@media \".concat(item[2], \" {\");\n      }\n      if (needLayer) {\n        content += \"@layer\".concat(item[5].length > 0 ? \" \".concat(item[5]) : \"\", \" {\");\n      }\n      content += cssWithMappingToString(item);\n      if (needLayer) {\n        content += \"}\";\n      }\n      if (item[2]) {\n        content += \"}\";\n      }\n      if (item[4]) {\n        content += \"}\";\n      }\n      return content;\n    }).join(\"\");\n  };\n\n  // import a list of modules into the list\n  list.i = function i(modules, media, dedupe, supports, layer) {\n    if (typeof modules === \"string\") {\n      modules = [[null, modules, undefined]];\n    }\n    var alreadyImportedModules = {};\n    if (dedupe) {\n      for (var k = 0; k < this.length; k++) {\n        var id = this[k][0];\n        if (id != null) {\n          alreadyImportedModules[id] = true;\n        }\n      }\n    }\n    for (var _k = 0; _k < modules.length; _k++) {\n      var item = [].concat(modules[_k]);\n      if (dedupe && alreadyImportedModules[item[0]]) {\n        continue;\n      }\n      if (typeof layer !== \"undefined\") {\n        if (typeof item[5] === \"undefined\") {\n          item[5] = layer;\n        } else {\n          item[1] = \"@layer\".concat(item[5].length > 0 ? \" \".concat(item[5]) : \"\", \" {\").concat(item[1], \"}\");\n          item[5] = layer;\n        }\n      }\n      if (media) {\n        if (!item[2]) {\n          item[2] = media;\n        } else {\n          item[1] = \"@media \".concat(item[2], \" {\").concat(item[1], \"}\");\n          item[2] = media;\n        }\n      }\n      if (supports) {\n        if (!item[4]) {\n          item[4] = \"\".concat(supports);\n        } else {\n          item[1] = \"@supports (\".concat(item[4], \") {\").concat(item[1], \"}\");\n          item[4] = supports;\n        }\n      }\n      list.push(item);\n    }\n  };\n  return list;\n};\n\n//# sourceURL=webpack://first-typing-website/../node_modules/css-loader/dist/runtime/api.js?");
+
+/***/ }),
+
+/***/ "../node_modules/css-loader/dist/runtime/noSourceMaps.js":
+/*!***************************************************************!*\
+  !*** ../node_modules/css-loader/dist/runtime/noSourceMaps.js ***!
+  \***************************************************************/
+/***/ ((module) => {
+
+eval("\n\nmodule.exports = function (i) {\n  return i[1];\n};\n\n//# sourceURL=webpack://first-typing-website/../node_modules/css-loader/dist/runtime/noSourceMaps.js?");
+
+/***/ }),
+
+/***/ "./arrows-small.svg":
+/*!**************************!*\
+  !*** ./arrows-small.svg ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"arrows-small.svg\");\n\n//# sourceURL=webpack://first-typing-website/./arrows-small.svg?");
+
+/***/ }),
+
+/***/ "./dark-theme-icon.png":
+/*!*****************************!*\
+  !*** ./dark-theme-icon.png ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"dark-theme-icon.png\");\n\n//# sourceURL=webpack://first-typing-website/./dark-theme-icon.png?");
+
+/***/ }),
+
+/***/ "./dark-theme-icon2.png":
+/*!******************************!*\
+  !*** ./dark-theme-icon2.png ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"dark-theme-icon2.png\");\n\n//# sourceURL=webpack://first-typing-website/./dark-theme-icon2.png?");
+
+/***/ }),
+
+/***/ "./keyboard.icon.png":
+/*!***************************!*\
+  !*** ./keyboard.icon.png ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"keyboard.icon.png\");\n\n//# sourceURL=webpack://first-typing-website/./keyboard.icon.png?");
+
+/***/ }),
+
+/***/ "./light-theme-icon.png":
+/*!******************************!*\
+  !*** ./light-theme-icon.png ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"light-theme-icon.png\");\n\n//# sourceURL=webpack://first-typing-website/./light-theme-icon.png?");
+
+/***/ }),
+
+/***/ "./light-theme-icon2.png":
+/*!*******************************!*\
+  !*** ./light-theme-icon2.png ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"light-theme-icon2.png\");\n\n//# sourceURL=webpack://first-typing-website/./light-theme-icon2.png?");
+
+/***/ }),
+
+/***/ "./styles/index.css":
+/*!**************************!*\
+  !*** ./styles/index.css ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/styleDomAPI.js */ \"../node_modules/style-loader/dist/runtime/styleDomAPI.js\");\n/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/insertBySelector.js */ \"../node_modules/style-loader/dist/runtime/insertBySelector.js\");\n/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */ \"../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js\");\n/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/insertStyleElement.js */ \"../node_modules/style-loader/dist/runtime/insertStyleElement.js\");\n/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/styleTagTransform.js */ \"../node_modules/style-loader/dist/runtime/styleTagTransform.js\");\n/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);\n/* harmony import */ var _node_modules_css_loader_dist_cjs_js_index_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../node_modules/css-loader/dist/cjs.js!./index.css */ \"../node_modules/css-loader/dist/cjs.js!./styles/index.css\");\n\n      \n      \n      \n      \n      \n      \n      \n      \n      \n\nvar options = {};\n\noptions.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());\noptions.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());\n\n      options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, \"head\");\n    \noptions.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());\noptions.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());\n\nvar update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_index_css__WEBPACK_IMPORTED_MODULE_6__[\"default\"], options);\n\n\n\n\n       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_index_css__WEBPACK_IMPORTED_MODULE_6__[\"default\"] && _node_modules_css_loader_dist_cjs_js_index_css__WEBPACK_IMPORTED_MODULE_6__[\"default\"].locals ? _node_modules_css_loader_dist_cjs_js_index_css__WEBPACK_IMPORTED_MODULE_6__[\"default\"].locals : undefined);\n\n\n//# sourceURL=webpack://first-typing-website/./styles/index.css?");
+
+/***/ }),
+
+/***/ "../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js":
+/*!*****************************************************************************!*\
+  !*** ../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
+  \*****************************************************************************/
+/***/ ((module) => {
+
+eval("\n\nvar stylesInDOM = [];\nfunction getIndexByIdentifier(identifier) {\n  var result = -1;\n  for (var i = 0; i < stylesInDOM.length; i++) {\n    if (stylesInDOM[i].identifier === identifier) {\n      result = i;\n      break;\n    }\n  }\n  return result;\n}\nfunction modulesToDom(list, options) {\n  var idCountMap = {};\n  var identifiers = [];\n  for (var i = 0; i < list.length; i++) {\n    var item = list[i];\n    var id = options.base ? item[0] + options.base : item[0];\n    var count = idCountMap[id] || 0;\n    var identifier = \"\".concat(id, \" \").concat(count);\n    idCountMap[id] = count + 1;\n    var indexByIdentifier = getIndexByIdentifier(identifier);\n    var obj = {\n      css: item[1],\n      media: item[2],\n      sourceMap: item[3],\n      supports: item[4],\n      layer: item[5]\n    };\n    if (indexByIdentifier !== -1) {\n      stylesInDOM[indexByIdentifier].references++;\n      stylesInDOM[indexByIdentifier].updater(obj);\n    } else {\n      var updater = addElementStyle(obj, options);\n      options.byIndex = i;\n      stylesInDOM.splice(i, 0, {\n        identifier: identifier,\n        updater: updater,\n        references: 1\n      });\n    }\n    identifiers.push(identifier);\n  }\n  return identifiers;\n}\nfunction addElementStyle(obj, options) {\n  var api = options.domAPI(options);\n  api.update(obj);\n  var updater = function updater(newObj) {\n    if (newObj) {\n      if (newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap && newObj.supports === obj.supports && newObj.layer === obj.layer) {\n        return;\n      }\n      api.update(obj = newObj);\n    } else {\n      api.remove();\n    }\n  };\n  return updater;\n}\nmodule.exports = function (list, options) {\n  options = options || {};\n  list = list || [];\n  var lastIdentifiers = modulesToDom(list, options);\n  return function update(newList) {\n    newList = newList || [];\n    for (var i = 0; i < lastIdentifiers.length; i++) {\n      var identifier = lastIdentifiers[i];\n      var index = getIndexByIdentifier(identifier);\n      stylesInDOM[index].references--;\n    }\n    var newLastIdentifiers = modulesToDom(newList, options);\n    for (var _i = 0; _i < lastIdentifiers.length; _i++) {\n      var _identifier = lastIdentifiers[_i];\n      var _index = getIndexByIdentifier(_identifier);\n      if (stylesInDOM[_index].references === 0) {\n        stylesInDOM[_index].updater();\n        stylesInDOM.splice(_index, 1);\n      }\n    }\n    lastIdentifiers = newLastIdentifiers;\n  };\n};\n\n//# sourceURL=webpack://first-typing-website/../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js?");
+
+/***/ }),
+
+/***/ "../node_modules/style-loader/dist/runtime/insertBySelector.js":
+/*!*********************************************************************!*\
+  !*** ../node_modules/style-loader/dist/runtime/insertBySelector.js ***!
+  \*********************************************************************/
+/***/ ((module) => {
+
+eval("\n\nvar memo = {};\n\n/* istanbul ignore next  */\nfunction getTarget(target) {\n  if (typeof memo[target] === \"undefined\") {\n    var styleTarget = document.querySelector(target);\n\n    // Special case to return head of iframe instead of iframe itself\n    if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {\n      try {\n        // This will throw an exception if access to iframe is blocked\n        // due to cross-origin restrictions\n        styleTarget = styleTarget.contentDocument.head;\n      } catch (e) {\n        // istanbul ignore next\n        styleTarget = null;\n      }\n    }\n    memo[target] = styleTarget;\n  }\n  return memo[target];\n}\n\n/* istanbul ignore next  */\nfunction insertBySelector(insert, style) {\n  var target = getTarget(insert);\n  if (!target) {\n    throw new Error(\"Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.\");\n  }\n  target.appendChild(style);\n}\nmodule.exports = insertBySelector;\n\n//# sourceURL=webpack://first-typing-website/../node_modules/style-loader/dist/runtime/insertBySelector.js?");
+
+/***/ }),
+
+/***/ "../node_modules/style-loader/dist/runtime/insertStyleElement.js":
+/*!***********************************************************************!*\
+  !*** ../node_modules/style-loader/dist/runtime/insertStyleElement.js ***!
+  \***********************************************************************/
+/***/ ((module) => {
+
+eval("\n\n/* istanbul ignore next  */\nfunction insertStyleElement(options) {\n  var element = document.createElement(\"style\");\n  options.setAttributes(element, options.attributes);\n  options.insert(element, options.options);\n  return element;\n}\nmodule.exports = insertStyleElement;\n\n//# sourceURL=webpack://first-typing-website/../node_modules/style-loader/dist/runtime/insertStyleElement.js?");
+
+/***/ }),
+
+/***/ "../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js":
+/*!***********************************************************************************!*\
+  !*** ../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js ***!
+  \***********************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("\n\n/* istanbul ignore next  */\nfunction setAttributesWithoutAttributes(styleElement) {\n  var nonce =  true ? __webpack_require__.nc : 0;\n  if (nonce) {\n    styleElement.setAttribute(\"nonce\", nonce);\n  }\n}\nmodule.exports = setAttributesWithoutAttributes;\n\n//# sourceURL=webpack://first-typing-website/../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js?");
+
+/***/ }),
+
+/***/ "../node_modules/style-loader/dist/runtime/styleDomAPI.js":
+/*!****************************************************************!*\
+  !*** ../node_modules/style-loader/dist/runtime/styleDomAPI.js ***!
+  \****************************************************************/
+/***/ ((module) => {
+
+eval("\n\n/* istanbul ignore next  */\nfunction apply(styleElement, options, obj) {\n  var css = \"\";\n  if (obj.supports) {\n    css += \"@supports (\".concat(obj.supports, \") {\");\n  }\n  if (obj.media) {\n    css += \"@media \".concat(obj.media, \" {\");\n  }\n  var needLayer = typeof obj.layer !== \"undefined\";\n  if (needLayer) {\n    css += \"@layer\".concat(obj.layer.length > 0 ? \" \".concat(obj.layer) : \"\", \" {\");\n  }\n  css += obj.css;\n  if (needLayer) {\n    css += \"}\";\n  }\n  if (obj.media) {\n    css += \"}\";\n  }\n  if (obj.supports) {\n    css += \"}\";\n  }\n  var sourceMap = obj.sourceMap;\n  if (sourceMap && typeof btoa !== \"undefined\") {\n    css += \"\\n/*# sourceMappingURL=data:application/json;base64,\".concat(btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))), \" */\");\n  }\n\n  // For old IE\n  /* istanbul ignore if  */\n  options.styleTagTransform(css, styleElement, options.options);\n}\nfunction removeStyleElement(styleElement) {\n  // istanbul ignore if\n  if (styleElement.parentNode === null) {\n    return false;\n  }\n  styleElement.parentNode.removeChild(styleElement);\n}\n\n/* istanbul ignore next  */\nfunction domAPI(options) {\n  if (typeof document === \"undefined\") {\n    return {\n      update: function update() {},\n      remove: function remove() {}\n    };\n  }\n  var styleElement = options.insertStyleElement(options);\n  return {\n    update: function update(obj) {\n      apply(styleElement, options, obj);\n    },\n    remove: function remove() {\n      removeStyleElement(styleElement);\n    }\n  };\n}\nmodule.exports = domAPI;\n\n//# sourceURL=webpack://first-typing-website/../node_modules/style-loader/dist/runtime/styleDomAPI.js?");
+
+/***/ }),
+
+/***/ "../node_modules/style-loader/dist/runtime/styleTagTransform.js":
+/*!**********************************************************************!*\
+  !*** ../node_modules/style-loader/dist/runtime/styleTagTransform.js ***!
+  \**********************************************************************/
+/***/ ((module) => {
+
+eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElement) {\n  if (styleElement.styleSheet) {\n    styleElement.styleSheet.cssText = css;\n  } else {\n    while (styleElement.firstChild) {\n      styleElement.removeChild(styleElement.firstChild);\n    }\n    styleElement.appendChild(document.createTextNode(css));\n  }\n}\nmodule.exports = styleTagTransform;\n\n//# sourceURL=webpack://first-typing-website/../node_modules/style-loader/dist/runtime/styleTagTransform.js?");
+
+/***/ }),
+
+/***/ "./functionality/data.json":
+/*!*********************************!*\
+  !*** ./functionality/data.json ***!
+  \*********************************/
+/***/ ((module) => {
+
+eval("module.exports = JSON.parse('{\"easy\":[\"the\",\"be\",\"to\",\"of\",\"and\",\"a\",\"in\",\"that\",\"have\",\"I\",\"it\",\"for\",\"not\",\"on\",\"with\",\"he\",\"as\",\"you\",\"do\",\"at\",\"this\",\"but\",\"his\",\"by\",\"from\",\"they\",\"we\",\"say\",\"her\",\"she\",\"or\",\"an\",\"will\",\"my\",\"one\",\"all\",\"would\",\"there\",\"their\",\"what\",\"so\",\"up\",\"out\",\"if\",\"about\",\"who\",\"get\",\"which\",\"go\",\"me\",\"when\",\"make\",\"can\",\"like\",\"time\",\"no\",\"just\",\"him\",\"know\",\"take\",\"people\",\"into\",\"year\",\"your\",\"good\",\"some\",\"could\",\"them\",\"see\",\"other\",\"than\",\"then\",\"now\",\"look\",\"only\",\"come\",\"its\",\"over\",\"think\",\"also\",\"back\",\"after\",\"use\",\"two\",\"how\",\"our\",\"work\",\"first\",\"well\",\"way\",\"even\",\"new\",\"want\",\"because\",\"any\",\"these\",\"give\",\"day\",\"most\",\"us\",\"is\",\"am\",\"are\",\"was\",\"were\",\"has\",\"had\",\"been\",\"shall\",\"will\",\"may\",\"can\",\"must\",\"need\",\"should\",\"would\",\"might\",\"could\",\"ought\",\"dare\",\"man\",\"woman\",\"child\",\"father\",\"mother\",\"brother\",\"sister\",\"cat\",\"dog\",\"friend\",\"love\",\"life\",\"light\",\"night\",\"water\",\"world\",\"earth\",\"fire\",\"air\",\"wind\",\"food\",\"fruit\",\"seed\",\"plant\",\"tree\",\"flower\",\"grass\",\"leaf\",\"root\",\"branch\",\"road\",\"car\",\"bus\",\"bike\",\"train\",\"plane\",\"ship\",\"boat\",\"room\",\"door\",\"book\",\"pen\",\"paper\",\"phone\",\"radio\",\"tv\",\"song\",\"music\",\"movie\",\"game\"],\"hard\":[\"engineering\",\"management\",\"production\",\"marketing\",\"financial\",\"technical\",\"presentation\",\"equipment\",\"type\",\"internal\",\"talk\",\"improvement\",\"discussion\",\"suggestions\",\"investment\",\"development\",\"challenge\",\"interview\",\"effective\",\"community\",\"direction\",\"objective\",\"structure\",\"strategy\",\"operation\",\"operation\",\"department\",\"difference\",\"knowledge\",\"background\",\"experience\",\"committee\",\"technology\",\"attention\",\"expression\",\"depression\",\"attractive\",\"responsive\",\"determination\",\"perspective\",\"assessment\",\"the\",\"be\",\"to\",\"of\",\"and\",\"a\",\"in\",\"that\",\"have\",\"I\",\"it\",\"for\",\"not\",\"on\",\"with\",\"he\",\"as\",\"you\",\"do\",\"at\",\"this\",\"but\",\"his\",\"by\",\"from\",\"they\",\"we\",\"say\",\"her\",\"she\",\"or\",\"an\",\"will\",\"my\",\"one\",\"all\",\"would\",\"there\",\"their\",\"what\",\"connection\",\"conference\",\"efficiency\",\"opportunity\",\"performance\",\"leadership\",\"recognition\",\"impression\",\"measurement\",\"environment\",\"understand\",\"collection\",\"competition\",\"reflection\",\"perception\",\"instruction\",\"population\",\"foundation\",\"appearance\",\"admiration\",\"influence\",\"commitment\",\"appreciation\",\"association\",\"imagination\",\"assignment\",\"alternative\",\"motivation\",\"impression\",\"confidence\",\"recording\",\"television\",\"distribution\",\"interaction\",\"preference\",\"importance\",\"literature\",\"reputation\",\"expression\",\"application\",\"association\",\"observation\",\"independent\",\"negotiation\",\"possession\",\"celebration\",\"expectation\",\"introduction\",\"government\",\"importance\",\"advertising\",\"resolution\",\"definition\",\"selection\",\"tradition\",\"responsible\",\"explanation\",\"preparation\",\"perspective\",\"reception\",\"reference\",\"chemistry\",\"promotion\",\"initiative\",\"restaurant\",\"difference\",\"management\",\"suggestion\",\"economics\",\"engineering\",\"reliability\",\"university\",\"situation\",\"construction\",\"challenge\",\"activity\",\"society\",\"interest\",\"strategy\",\"technology\",\"generation\",\"partner\",\"solution\",\"service\",\"sector\",\"feature\",\"policy\",\"resource\",\"identity\",\"language\",\"formula\",\"section\",\"region\",\"contact\",\"solution\",\"database\",\"favorite\",\"theatre\",\"security\",\"property\",\"analysis\",\"concept\",\"software\",\"design\",\"quality\",\"pressure\",\"knowledge\",\"comment\",\"register\",\"network\",\"offer\",\"address\",\"confirm\",\"introduce\",\"request\",\"respond\",\"frequency\",\"target\",\"topic\",\"balance\",\"reply\",\"article\",\"organize\",\"enter\",\"share\",\"treat\",\"compare\",\"check\",\"decide\",\"act\",\"buy\",\"develop\",\"consider\",\"include\",\"continue\",\"draw\",\"argue\",\"require\",\"claim\",\"complete\",\"remove\",\"judge\",\"contain\",\"define\",\"estimate\"]}');\n\n//# sourceURL=webpack://first-typing-website/./functionality/data.json?");
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			id: moduleId,
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src;
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) {
+/******/ 					var i = scripts.length - 1;
+/******/ 					while (i > -1 && !scriptUrl) scriptUrl = scripts[i--].src;
+/******/ 				}
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/nonce */
+/******/ 	(() => {
+/******/ 		__webpack_require__.nc = undefined;
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module can't be inlined because the eval devtool is used.
+/******/ 	var __webpack_exports__ = __webpack_require__("./functionality/index.js");
+/******/ 	
+/******/ })()
+;
